@@ -25,6 +25,44 @@ Use this skill when:
 - Allocating resources
 - Risk assessment and mitigation
 
+## User Impact & Incident Prevention
+
+**CRITICAL: When a project involves deploying to, changing, or affecting company users or their devices (MDM, EDR, IAM, network, etc.), you MUST include these safeguards in the plan:**
+
+### Principles
+- **Do no harm** - The #1 priority is maintaining a safe, uninterrupted experience for end users
+- **Phased rollouts always** - Never deploy changes to all users at once. Always start with a pilot group (IT/admin devices), then wave-expand
+- **Rollback plan required** - Every change that touches user devices or access must have a documented rollback path
+- **Monitor before expanding** - Observe each wave for issues before rolling to the next group
+- **Communicate proactively** - Inform affected users before changes hit their devices, not after
+
+### Mandatory Plan Sections for User-Affecting Projects
+When planning projects that touch any of the following, include these sections:
+- **MDM deployments** (Kandji, Jamf, Intune, etc.)
+- **EDR/AV rollouts** (CrowdStrike, SentinelOne, etc.)
+- **Identity/access changes** (Okta, Azure AD policies, SSO, MFA enforcement)
+- **Network/security changes** (Cloudflare Zero Trust, VPN, firewall rules)
+- **OS updates, patches, or configuration changes**
+
+Include in the plan:
+1. **Rollout waves** - Define pilot → wave 1 → wave 2 → full fleet, with clear group sizes
+2. **Success criteria per wave** - What must be true before expanding (e.g., no user complaints, sensors reporting, no app breakage)
+3. **Rollback procedure** - How to undo the change for affected devices/users
+4. **User communication plan** - What to tell users, when, and through which channel
+5. **Monitoring checkpoints** - What to watch for between waves (performance, app compatibility, user-reported issues)
+6. **Business hours awareness** - Avoid deploying disruptive changes during peak work hours
+7. **Support readiness** - Ensure IT/helpdesk knows what's being deployed and how to troubleshoot
+
+### Risk Assessment Questions
+Before any user-affecting deployment, answer:
+- What happens if this change breaks a user's workflow?
+- Can a user self-recover, or do they need IT intervention?
+- What's the blast radius if something goes wrong?
+- Is there a maintenance window or should this be transparent?
+- Are there high-risk groups (executives, on-call engineers) that need special handling?
+
+---
+
 ## Planning Process
 
 ### 1. **Define Success**
